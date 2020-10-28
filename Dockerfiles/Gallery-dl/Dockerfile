@@ -3,7 +3,7 @@
 #   -it \
 #   -v C:\Users\username\Gallery-dl:/gallery-dl \ (Windows)
 #   -v /home/username/Gallery-dl:/gallerry-dl \ (Linux)
-#   alpine
+#   gallery-dl:latest (For use after the Dockerfile creation)
 
 FROM alpine
 ENV ALPINE_FRONTEND=noninteractive
