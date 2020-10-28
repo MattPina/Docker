@@ -3,7 +3,7 @@
 #   -it \
 #   -v C:\Users\username\Youtube-dl:/youtube-dl \ (Windows)
 #   -v /home/username/Youtube-dl:/youtube-dl \ (Linux)
-#   alpine
+#   youtube-dl:latest (For use after the Dockerfile creation)
 
 FROM alpine
 ENV ALPINE_FRONTEND=noninteractive
