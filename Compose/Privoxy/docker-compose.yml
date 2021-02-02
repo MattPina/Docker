@@ -1,0 +1,15 @@
+version: ""
+services:
+    tor:
+        image: jess/tor-proxy
+        container_name: tor-proxy
+        ports:
+            - 9050:9050
+        restart: unless-stopped
+            
+    privoxy:
+        image: jess/privoxy
+        container_name: privoxy
+        ports:
+            - 8118:8118
+        restart: unless-stopped

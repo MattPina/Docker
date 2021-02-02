@@ -1,0 +1,16 @@
+# Based on "https://github.com/jessfraz/dockerfiles/blob/master/tor-browser/stable/Dockerfile"
+
+version: ""
+services:
+    tor:
+        image: jess/tor-browser
+        container_name: tor-browser
+        environment:
+            - DISPLAY=unix$DISPLAY
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix
+            - /dev/shm:/dev/shm
+            - /dev/snd:/dev/snd
+        devices:
+            - /dev/snd
+            - /dev/dri
