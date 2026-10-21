@@ -8,7 +8,7 @@
 #	/home/user/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser
 
 FROM ubuntu
-ENV UBUNTU_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y \
 	ca-certificates \
 	curl \
