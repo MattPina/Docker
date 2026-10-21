@@ -1,6 +1,5 @@
 # Based on "https://github.com/jessfraz/dockerfiles/blob/master/tor-browser/stable/Dockerfile"
 
-version: ""
 services:
     tor:
         image: jess/tor-browser

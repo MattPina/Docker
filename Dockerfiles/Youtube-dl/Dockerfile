@@ -1,13 +1,12 @@
+# Uses yt-dlp, the maintained fork of youtube-dl.
 # docker container run \
-#   --name youtube-dl \
+#   --name yt-dlp \
 #   -it \
 #   --restart unless-stopped \ (optional)
 #   -v C:\Users\username\Youtube-dl:/youtube-dl \ (Windows)
 #   -v /home/username/Youtube-dl:/youtube-dl \ (Linux)
-#   youtube-dl:latest (For use after the Dockerfile creation)
+#   yt-dlp:latest (For use after the Dockerfile creation)
 
 FROM alpine
-ENV ALPINE_FRONTEND=noninteractive
-RUN apk update
-RUN apk add youtube-dl
+RUN apk add --no-cache yt-dlp ffmpeg
 WORKDIR /youtube-dl
