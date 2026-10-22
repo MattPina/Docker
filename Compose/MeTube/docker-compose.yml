@@ -1,0 +1,31 @@
+# Based on "https://github.com/alexta69/metube"
+#
+# Builds MeTube (web UI for yt-dlp) from the upstream source on GitHub.
+#   Build and start:  docker compose up -d --build
+#   Update:           docker compose build --pull --no-cache && docker compose up -d
+#   Web UI:           http://localhost:8081
+#
+# To use the prebuilt image instead of building, comment out "build:" and keep "image: ghcr.io/alexta69/metube".
+
+services:
+    metube:
+        build:
+            context: https://github.com/alexta69/metube.git#master
+        image: metube:latest
+        container_name: metube
+        ports:
+            - 8081:8081
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - UMASK=022
+            - DOWNLOAD_DIR=/downloads
+            - STATE_DIR=/downloads/.metube
+            - TEMP_DIR=/downloads
+            - MAX_CONCURRENT_DOWNLOADS=3
+            - DEFAULT_THEME=auto
+        volumes:
+            - ./downloads:/downloads
+            # - C:\Users\username\MeTube:/downloads (Windows)
+            # - /home/username/MeTube:/downloads (Linux)
+        restart: unless-stopped
